@@ -7,7 +7,15 @@ def get_book_text(book_path):
         return None
 
 def word_count(words):
-    num_words = get_book_text("books/frankenstein.txt")
-    count = num_words.split()
+    count = words.split()
     return len(count)
 
+def number_of_characters(text):
+    letters = {}
+
+    for i in text.lower():
+        if i in letters:
+            letters[i] += 1
+        else:
+            letters[i] = 1
+    return letters
